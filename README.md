@@ -6,6 +6,9 @@ A machine learning web application that predicts crop yield (tonnes/hectare) usi
 
 ---
 
+ [👉 Click here for Live Demo](https://cropyieldpredictionforcrops.streamlit.app/)
+
+
 ## 📌 Project Overview
 
 This project walks through the complete ML pipeline — from raw agricultural data to a deployed interactive web app:
