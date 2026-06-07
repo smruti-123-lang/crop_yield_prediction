@@ -4,15 +4,20 @@ import numpy as np
 import pandas as pd
 
 # ── Load models & encoders ────────────────────────────────────────
-lr_model    = pickle.load(open('lr_model.pkl',    'rb'))
-lasso_model = pickle.load(open('lasso_model.pkl', 'rb'))
-ridge_model = pickle.load(open('ridge_model.pkl', 'rb'))
-rf_model    = pickle.load(open('rf_model.pkl',    'rb'))
+import os
 
-le_crop     = pickle.load(open('le_crop.pkl',   'rb'))
-le_state    = pickle.load(open('le_state.pkl',  'rb'))
-le_season   = pickle.load(open('le_season.pkl', 'rb'))
+# Get the folder where app.py lives
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# ── Load models & encoders ────────────────────────────────────────
+lr_model    = pickle.load(open(os.path.join(BASE_DIR, 'lr_model.pkl'),    'rb'))
+lasso_model = pickle.load(open(os.path.join(BASE_DIR, 'lasso_model.pkl'), 'rb'))
+ridge_model = pickle.load(open(os.path.join(BASE_DIR, 'ridge_model.pkl'), 'rb'))
+rf_model    = pickle.load(open(os.path.join(BASE_DIR, 'rf_model.pkl'),    'rb'))
+
+le_crop     = pickle.load(open(os.path.join(BASE_DIR, 'le_crop.pkl'),   'rb'))
+le_state    = pickle.load(open(os.path.join(BASE_DIR, 'le_state.pkl'),  'rb'))
+le_season   = pickle.load(open(os.path.join(BASE_DIR, 'le_season.pkl'), 'rb'))
 # ── Page config ───────────────────────────────────────────────────
 st.set_page_config(page_title='Crop Yield Predictor', page_icon='🌾', layout='centered')
 st.title('🌾 Crop Yield Predictor')
